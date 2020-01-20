@@ -58,7 +58,7 @@ void dimmer(int freq, int duty) {
     delay(offTime);
 }
   ```
-7. Replace the timedBlink function call in the loop. Use for loops to count up and down and calls the dimmer code every iteration with a new duty value. Set the frequency to 100. Observe the fading effect with your logic analyzer and take a screenshot.
+7. Replace the timedBlink function call in the loop. Use for loops to count up and down and call the dimmer code every iteration with a new duty value. Set the frequency to 100. Observe the fading effect with your logic analyzer and take a screenshot.
 9. Now, reduce the frequency (starting at 100Hz) in 10Hz increments by changing the freq argument when you call the function. Observe the unwanted behavior. _What is going wrong? Brainstorm some solutions. Dimmers exist in the real world. What is their solution?_
 9. When you’re done, commit your new code and push.
 
@@ -78,7 +78,7 @@ UART, or Universal Asynchronous Receiver/Transmitter allows the ESP32 and your c
 7. Use the Timing Marker Pair tool to profile how long it takes to send your message via UART. Include this value in your `Report.md`
 
 
-# Procedure B Part 2: SPI
+## Procedure B Part 2: SPI
 SPI, or Serial Peripheral Interface, is a very fast and robust synchronous communication protocol. However, it requires more wires than UART and I<sup>2</sup>C. It is used to connect "master" devices to "slave" devices. Each direction of communication has it's own line. There is Master Out Slave IN (MOSI) and Master In Slave Out (MISO). There is also a clock line and usually a chip select (aka slave select) line to tell the master and slave when to be listening, making this protocol less sensitive to noise. Not all peripherals require a chip select line, or have a way of responding,so the two most commonly used lines are MOSI and CLK. 
 
 1. Open the SPI_Example sketch included in this repo. 
