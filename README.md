@@ -18,8 +18,7 @@ Git can be a little tricky to get the hang of, but it is extremely useful and wi
 
 ## Setting up the Arduino environment
 
-1. [Download and install the Arduino IDE](https://www.arduino.cc/en/Main/Software). When you open the IDE you should see a blank sketch with a setup function and a loop function. _Why do embedded systems need a setup and a loop?_
-    1a. Note: Depending on your OS/Arduino IDE version, you may need to install the [CP210x USB to UART Bridge Driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) separately. If you can't flash your board, try this. 
+1. [Download and install the Arduino IDE](https://www.arduino.cc/en/Main/Software). When you open the IDE you should see a blank sketch with a setup function and a loop function. _Why do embedded systems need a setup and a loop?_ Note: Depending on your OS/Arduino IDE version, you may need to install the [CP210x USB to UART Bridge Driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) separately. If you can't flash your board, try this. 
 2. Since we are using ESP32, which is not in the default Arduino options, we need to download the board files. Go to File > Preferences > Additional Board Manager URLs and add `https://dl.espressif.com/dl/package_esp32_index.json` to the list.
 3. Now you can tell the Arduino IDE you’re using and ESP32. Go to Tools > Board > Board Manager and search for ESP32. Install the ESP32 package. Install version 1.0.3. Then go back to Tools > Board and select Node32S from the dropdown.
 4. Connect the provided 220 Ohm resistor and blue LED to GPIO 2, as shown in the diagram. (Hint: The side with the big flag is the anode (+), the side with the little triangle is the cathode (-). Now you can clip your LEDs and never worry about the polarization again!) ![LED](img/ESP32-LED.jpg)
