@@ -4,6 +4,7 @@ We will be using the ESP32 DevkitC V4 board in this class. One will be provided 
 
 ## ESP32 Pinout
 ![ESP32 Pinout](img/ESP32Pinout.jpg)
+**Note: Whenever I refer to a pin number in this document, I am referring to the GPIO pin, shown in brown.**
 
 ## Setting up Github
 
