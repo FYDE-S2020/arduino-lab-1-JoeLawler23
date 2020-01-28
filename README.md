@@ -1,6 +1,6 @@
 # Lab 1: Intro to Arduino environment, Git, and debugging
 
-We will be using ESP32 Devkits in this class. One will be provided for you. If you blow it up (it happens) they’re available in the TIW vending machine for $5. This lab will be done individually. You will clone the assignment from the class Github, add your code, answer the questions in  `Report.md`, and push it when you’re done.
+We will be using the ESP32 DevkitC V4 board in this class. One will be provided for you. If you blow it up (it happens) they’re available in the TIW vending machine for $5. Documentation for the specific board we're using is [here](https://docs.espressif.com/projects/esp-idf/en/latest/hw-reference/get-started-devkitc.html)This lab will be done individually. You will clone the assignment from the class Github, add your code, answer the questions in  `Report.md`, and push it when you’re done.
 
 ## ESP32 Pinout
 ![ESP32 Pinout](img/ESP32Pinout.jpg)
@@ -18,14 +18,16 @@ Git can be a little tricky to get the hang of, but it is extremely useful and wi
 ## Setting up the Arduino environment
 
 1. [Download and install the Arduino IDE](https://www.arduino.cc/en/Main/Software). When you open the IDE you should see a blank sketch with a setup function and a loop function. _Why do embedded systems need a setup and a loop?_
+    1a. Note: Depending on your OS/Arduino IDE version, you may need to install the [CP210x USB to UART Bridge Driver](https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers) separately. If you can't flash your board, try this. 
 2. Since we are using ESP32, which is not in the default Arduino options, we need to download the board files. Go to File > Preferences > Additional Board Manager URLs and add `https://dl.espressif.com/dl/package_esp32_index.json` to the list.
 3. Now you can tell the Arduino IDE you’re using and ESP32. Go to Tools > Board > Board Manager and search for ESP32. Install the ESP32 package. Install version 1.0.3. Then go back to Tools > Board and select Node32S from the dropdown.
+4. Connect the provided 220 Ohm resistor and blue LED to GPIO 2, as shown in the diagram. (Hint: The side with the big flag is the anode (+), the side with the little triangle is the cathode (-). Now you can clip your LEDs and never worry about the polarization again!) ![LED](img/ESP32-LED.jpg)
 4. Connect your board to your computer using a micro USB cable. Go to Tools > Port and select the COM port for your connected board.
 5. Try programming the board. Open the examples/Blinky sketch. In the toolbar at the top, you’ll see a check mark and an arrow. If the code is not compiled, clicking the arrow will first compile the code, then program the board. You should now see the onboard LED blinking. **IMPORTANT: YOU CANNOT PROGRAM THE ESP32 UNLESS YOU HOLD DOWN THE BOOT BUTTON (to the right of the USB port) THE ENTIRE TIME IT’S FLASHING.** There is a hardware fix for this, if you want to implement it on a breadboard or PCB you can follow this tutorial here: [Solve failed to connect to ESP32](https://randomnerdtutorials.com/solved-failed-to-connect-to-esp32-timed-out-waiting-for-packet-header/) (optional)
 
 ## Setting up Saleae
 
-Saleae is a company that produces industry standard logic analyzers. Their software is excellent, user friendly, and compatible with the mini logic analyzers provided to your team. When you outgrow the mini logic analyzer (it can only sample at up to 24MHz, you will need more one day) I highly recommend investing in a Saleae, both because their analyzers are excellent, and to support their Software/R&D. [Download the software here.](https://www.saleae.com/downloads/)
+Saleae is a company that produces industry standard logic analyzers. Their software is excellent, user friendly, and compatible with the mini logic analyzers provided to your team. When you outgrow the provided mini logic analyzer (it can only sample at up to 24MHz, you will need more one day) I highly recommend investing in a Saleae, both because their analyzers are excellent, and to support their Software/R&D. [Download the software here.](https://www.saleae.com/downloads/)
 
 1. Connect your logic analyzer using Mini USB.
 2. Connect the ground wire from your logic analyzer to the ground pin on the ESP32. _Why do you need to do this? Think back to EE302._
@@ -37,7 +39,7 @@ Play around with the interface. Add some channels. Change the sampling speed. Tr
 1. Create a new sketch inside your repo that you cloned. Name it Lab1\_Blink. After creating the sketch, use `git add *` to add the sketch folder and files. You can check that they’re being tracked using `git status`.
 2. Copy the setup code directly from Blinky.ino in the examples folder. Copy the code from the example's loop into a new function called timedBlink. Put this new function in the space between setup and loop. Use this code to obtain the same result as before. You’ll need to change the code in the loop to call this new function, and you’ll need to pass the function a number for the parameter "interval". Hint: you only need 1 line of code in the loop.
 3. Once you've confirmed your new blink works, edit the loop again so that the board blinks with this sequence: 0.25 second on, 0.25 off, 0.5 on, 0.5 off, 1 on, 1 off, repeat. Connect your logic analyzer to pin 2 and take a screenshot of this sequence on Saleae. Save the image to your repo in the img folder and link to it in your `Report.md`.
-4. At this point, commit your changes. Navigate to your repo in the command line of your choice. The commands are:
+4. At this point, commit your changes. Navigate to your repo in the command line of your choice, or open Git Bash inside your repo. The commands are:
   ```sh
 git add img/*
 git add Lab1_Blink/*
@@ -58,7 +60,7 @@ void dimmer(int freq, int duty) {
     delay(offTime);
 }
   ```
-7. Replace the timedBlink function call in the loop. Use for loops to count up and down and calls the dimmer code every iteration with a new duty value. Set the frequency to 100. Observe the fading effect with your logic analyzer and take a screenshot.
+7. Replace the timedBlink function call in the loop. Use for loops to count up and down and calls the dimmer code every iteration with a new duty value. Set the frequency to 100. Connect your logic analyzer to pin 2 and observe the fading effect signal. Take a screenshot for your `Report.md`.
 9. Now, reduce the frequency (starting at 100Hz) in 10Hz increments by changing the freq argument when you call the function. Observe the unwanted behavior. _What is going wrong? Brainstorm some solutions. Dimmers exist in the real world. What is their solution?_
 9. When you’re done, commit your new code and push.
 
