@@ -424,7 +424,8 @@ void 0!==arguments[0]&&(br.sequenceConfig=arguments[0]),e=arguments[1]):e=argume
 <h1 id="lab-1-intro-to-arduino-environment-git-and-debugging">Lab 1: Intro to Arduino environment, Git, and debugging</h1>
 <p>We will be using the ESP32 DevkitC V4 board in this class. One will be provided for you. If you blow it up (it happens) they’re available in the TIW vending machine for $5. Documentation for the specific board we're using is <a href="https://docs.espressif.com/projects/esp-idf/en/latest/hw-reference/get-started-devkitc.html">here</a>. This lab will be done individually. You will clone the assignment from the class Github, add your code, answer the questions in  <code>Report.md</code>, and push it when you’re done.</p>
 <h2 id="esp32-pinout">ESP32 Pinout</h2>
-<p><img src="img/ESP32Pinout.jpg" alt="ESP32 Pinout"></p>
+<p><img src="img/ESP32Pinout.jpg" alt="ESP32 Pinout">
+<strong>Note: Whenever I refer to a pin number in this document, I am referring to the GPIO pin, shown in brown.</strong></p>
 <h2 id="setting-up-github">Setting up Github</h2>
 <p>Git can be a little tricky to get the hang of, but it is extremely useful and will make your life a lot easier going forward, especially for group projects. The most important commands are <code>clone</code>, <code>add</code>, <code>status</code>, <code>commit</code>, <code>push</code>, and <code>pull</code>. You can find a nice cheat sheet <a href="https://education.github.com/git-cheat-sheet-education.pdf">here</a> or in Git.md. If you have questions, Google it first, post the questions on Piazza, then ask questions in office hours.</p>
 <ol>
@@ -485,7 +486,7 @@ git push
 <li>When you’re done, commit your new code and push.</li>
 </ol>
 <h1 id="procedure-b-communication-protocols">Procedure B: Communication Protocols</h1>
-<p>Communication is essential when building anything electronic. Many transducers and chips out there must be connected to your microcontroller using a communication protocol. The three most common are Universal Asynchronous Receiver/Transmitter (UART), Serial SPI, and Inter-Integrated Circuit (I<sup>2</sup>C, aka Wire). In this section, you will observe how UART and SPI protocols work on your logic analyzer and serial monitor. I<sup>2</sup>C requires an external device to test, so you will not be observing it in this lab. Read the I2C_Example sketch, but do not run it, to answer the questions in <code>Report.md</code>. You do not need to write any code, just use the provided sketches. Type the same message (e.g. hello world) for each example, so you can compare the results.</p>
+<p>Communication is essential when building anything electronic. Many transducers and chips out there must be connected to your microcontroller using a communication protocol. The three most common are Universal Asynchronous Receiver/Transmitter (UART), Serial Peripheral Interface (SPI), and Inter-Integrated Circuit (I<sup>2</sup>C, aka Wire). In this section, you will observe how UART and SPI protocols work on your logic analyzer and serial monitor. I<sup>2</sup>C requires an external device to test, so you will not be observing it in this lab. Read the I2C_Example sketch, but do not run it, to answer the questions in <code>Report.md</code>. You do not need to write any code, just use the provided sketches. Type the same message (e.g. hello world) for each example, so you can compare the results.</p>
 <h2 id="procedure-b-part-1-uart">Procedure B Part 1: UART</h2>
 <p>UART, or Universal Asynchronous Receiver/Transmitter allows the ESP32 and your computer to communicate. You do not need to write any new code for this part. You will observe the communication on your logic analyzer and serial monitor.</p>
 <ol>
