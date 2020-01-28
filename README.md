@@ -1,6 +1,6 @@
 # Lab 1: Intro to Arduino environment, Git, and debugging
 
-We will be using the ESP32 DevkitC V4 board in this class. One will be provided for you. If you blow it up (it happens) they’re available in the TIW vending machine for $5. Documentation for the specific board we're using is [here](https://docs.espressif.com/projects/esp-idf/en/latest/hw-reference/get-started-devkitc.html)This lab will be done individually. You will clone the assignment from the class Github, add your code, answer the questions in  `Report.md`, and push it when you’re done.
+We will be using the ESP32 DevkitC V4 board in this class. One will be provided for you. If you blow it up (it happens) they’re available in the TIW vending machine for $5. Documentation for the specific board we're using is [here](https://docs.espressif.com/projects/esp-idf/en/latest/hw-reference/get-started-devkitc.html). This lab will be done individually. You will clone the assignment from the class Github, add your code, answer the questions in  `Report.md`, and push it when you’re done.
 
 ## ESP32 Pinout
 ![ESP32 Pinout](img/ESP32Pinout.jpg)
