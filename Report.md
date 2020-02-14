@@ -1,8 +1,8 @@
-Name:
+Name: Joseph Lawler
 
-EID:
+EID:jfl849
 
-Team Number:
+Team Number:F3
 
 ## Questions
 
@@ -65,7 +65,7 @@ Procedure A, step 1:
 ![Put path to your image here ->](img/logicanalyzer.png)
 
 Procedure A, step 4:
-![Put path to your image here ->](img/dimmer.png)
+![Put path to your image here ->](img/dimmerpic.png)
 
 Procedure B, UART:
 ![Put path to your image here ->](img/UART.png)
