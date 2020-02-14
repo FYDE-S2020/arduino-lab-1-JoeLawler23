@@ -1,8 +1,8 @@
 Name: Joseph Lawler
 
-EID:jfl849
+EID: jfl849
 
-Team Number:F3
+Team Number: F3
 
 ## Questions
 
